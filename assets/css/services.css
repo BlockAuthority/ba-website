@@ -1,0 +1,109 @@
+.services {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background);
+}
+
+.services .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.services h2 {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    width: 100%;
+}
+
+.service-card {
+    background-color: var(--background);
+    padding: var(--spacing-lg);
+    border-bottom: 2px solid var(--primary);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.5rem;
+    position: relative;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.service-list li {
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.service-list li:last-child {
+    margin-bottom: 0;
+}
+
+.service-list li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 1200px) {
+    .services-grid {
+        gap: var(--spacing-sm);
+    }
+
+    .service-card {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 1024px) {
+    .services .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .services {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .services .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .service-card {
+        padding: var(--spacing-md);
+        min-height: auto;
+    }
+}

@@ -1,0 +1,155 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--background);
+    position: relative;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.hero .container {
+    padding-top: 80px; /* Header height */
+    max-width: 1000px;
+}
+
+.hero h1 {
+    font-size: 5.5rem;
+    max-width: 900px;
+    margin: 0 auto var(--spacing-lg);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 1.75rem;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-xl);
+    opacity: 0.9;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.hero-cta {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
+
+.hero .btn-primary {
+    background-color: var(--background);
+    color: var(--primary);
+    font-size: 1.25rem;
+    padding: 1rem 2.5rem;
+    border: 2px solid var(--background);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.hero .btn-primary:hover {
+    background-color: transparent;
+    color: var(--background);
+    transform: translateY(-2px);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    opacity: 1;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translate(-50%, 0);
+    }
+    40% {
+        transform: translate(-50%, -10px);
+    }
+    60% {
+        transform: translate(-50%, -5px);
+    }
+}
+
+.scroll-indicator {
+    animation: bounce 2s infinite;
+}
+
+/* Add a subtle gradient overlay */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+    pointer-events: none;
+}
+
+/* Add some decorative elements */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 30%),
+        radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 30%);
+    pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .hero .btn-primary {
+        font-size: 1.125rem;
+        padding: 0.875rem 2rem;
+    }
+
+    .hero-cta {
+        margin-top: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+}

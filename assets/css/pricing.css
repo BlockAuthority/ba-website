@@ -1,0 +1,196 @@
+.pricing {
+    padding: var(--spacing-xl) 0;
+    background-color: #f8f9fa;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+    opacity: 0.8;
+    text-align: center;
+}
+
+.pricing .container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    width: 100%;
+}
+
+.pricing-card {
+    background-color: var(--background);
+    padding: var(--spacing-lg);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 550px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.featured {
+    border-color: var(--primary);
+    border-width: 2px;
+}
+
+.pricing-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.pricing-header h3 {
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary);
+}
+
+.featured .pricing-header h3 {
+    color: var(--primary);
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+    color: var(--text);
+}
+
+.duration {
+    font-size: 1rem;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-lg);
+    flex-grow: 1;
+}
+
+.pricing-features li {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+    position: relative;
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+.pricing-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.pricing-card .btn {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.1rem;
+    background-color: var(--primary);
+    color: var(--background);
+    border: 2px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+.pricing-card .btn:hover {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+/* Hourly Rates Section */
+.consulting-rates {
+    width: 100%;
+    margin: var(--spacing-xl) auto 0;
+    padding-top: var(--spacing-xl);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.consulting-rates h3 {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    font-size: 2rem;
+}
+
+.rates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.rate-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--background);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.rate-item h4 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem;
+}
+
+.rate-item p {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--text);
+}
+
+@media (max-width: 1200px) {
+    .pricing-grid, .rates-grid {
+        gap: var(--spacing-sm);
+    }
+
+    .pricing-card, .rate-item {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 1024px) {
+    .pricing .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .pricing-grid, .rates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .pricing-grid, .rates-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: var(--spacing-md);
+    }
+
+    .pricing-card, .rate-item {
+        min-height: auto;
+        padding: var(--spacing-md);
+    }
+
+    .pricing-features li {
+        font-size: 1rem;
+    }
+} 
